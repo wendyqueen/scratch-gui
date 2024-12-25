@@ -125,7 +125,10 @@ const buildConfig = baseConfig.clone()
         ...commonHtmlWebpackPluginOptions,
         chunks: ['gui'],
         template: 'src/playground/index.ejs',
-        title: 'Scratch 3.0 GUI'
+        title: 'Scratch 3.0 - 希妈阿Q - 免费',
+        meta: {
+            keywords: 'Scratch 3.0, 希妈阿Q, 少儿编程, 免费 Scratch, 免费少儿编程, Scratch 编程入门, Scratch 编程教程, Scratch 编程课程, Scratch 编程下载, Scratch 编程在线, Scratch 编程网站, Scratch 编程游戏'
+        }
     }))
     .addPlugin(new HtmlWebpackPlugin({
         ...commonHtmlWebpackPluginOptions,
