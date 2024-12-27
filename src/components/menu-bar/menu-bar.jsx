@@ -271,6 +271,9 @@ class MenuBar extends React.Component {
     handleBilibiliClick () {
         window.open('https://space.bilibili.com/103304976/channel/series', '_blank');
     }
+    handleQuestionnaireClick () {
+        window.open('https://hope-acad.feishu.cn/share/base/form/shrcnQAWShDKzclXW5vcOkaL3Xe', '_blank');
+    }
     handleRestoreOption (restoreFun) {
         return () => {
             restoreFun();
@@ -650,6 +653,19 @@ class MenuBar extends React.Component {
                                 defaultMessage="B站视频教程"
                                 description="Link for tutorials on Bilibili"
                                 id="gui.menuBar.bilibiliTutorials"
+                            />
+                        </div>
+                    </div>
+                    <Divider className={classNames(styles.divider)} />
+                    <div className={styles.menuBarItem}>
+                        <div
+                            className={classNames(styles.menuBarItem, styles.hoverable, 'questionnaire-button')}
+                            onClick={this.handleQuestionnaireClick}
+                        >
+                            <FormattedMessage
+                                defaultMessage="📝 问卷反馈"
+                                description="Link for feedback questionnaire"
+                                id="gui.menuBar.questionnaireTutorials"
                             />
                         </div>
                     </div>
