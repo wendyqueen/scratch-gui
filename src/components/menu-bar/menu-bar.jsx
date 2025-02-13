@@ -11,7 +11,7 @@ import VM from 'scratch-vm';
 
 import Box from '../box/box.jsx';
 import Button from '../button/button.jsx';
-import WeChatButton from './wechat-button.jsx';
+import QQGroupButton from './qq-group-button.jsx';
 import {ComingSoonTooltip} from '../coming-soon/coming-soon.jsx';
 import Divider from '../divider/divider.jsx';
 import MenuBarMenu from './menu-bar-menu.jsx';
@@ -270,6 +270,9 @@ class MenuBar extends React.Component {
     }
     handleBilibiliClick () {
         window.open('https://space.bilibili.com/103304976/channel/series', '_blank');
+    }
+    handleResourceShareClick () {
+        window.open('https://docs.qq.com/sheet/DVFJ2Z1VHb2JwelVE', '_blank');
     }
     handleQuestionnaireClick () {
         window.open('https://hope-acad.feishu.cn/share/base/form/shrcnQAWShDKzclXW5vcOkaL3Xe', '_blank');
@@ -640,19 +643,32 @@ class MenuBar extends React.Component {
                         />
                     ) : null)}
                     <Divider className={classNames(styles.divider)} />
-                    <div className={classNames(styles.menuBarItem)}>
-                        <WeChatButton className={styles.menuBarButton} />
-                    </div>
-                    <Divider className={classNames(styles.divider)} />
                     <div className={styles.menuBarItem}>
                         <div
                             className={classNames(styles.menuBarItem, styles.hoverable, 'bilibili-button')}
                             onClick={this.handleBilibiliClick}
                         >
                             <FormattedMessage
-                                defaultMessage="B站视频教程"
+                                defaultMessage="🚀B站视频教程"
                                 description="Link for tutorials on Bilibili"
                                 id="gui.menuBar.bilibiliTutorials"
+                            />
+                        </div>
+                    </div>
+                    <Divider className={classNames(styles.divider)} />
+                    <div className={classNames(styles.menuBarItem)}>
+                        <QQGroupButton className={styles.menuBarButton} />
+                    </div>
+                    <Divider className={classNames(styles.divider)} />
+                    <div className={styles.menuBarItem}>
+                        <div
+                            className={classNames(styles.menuBarItem, styles.hoverable, 'resource-share-button')}
+                            onClick={this.handleResourceShareClick}
+                        >
+                            <FormattedMessage
+                                defaultMessage="❤️资源分享"
+                                description="Link for free resource sharing"
+                                id="gui.menuBar.resourceSharing"
                             />
                         </div>
                     </div>
@@ -667,37 +683,6 @@ class MenuBar extends React.Component {
                                 description="Link for feedback questionnaire"
                                 id="gui.menuBar.questionnaireTutorials"
                             />
-                        </div>
-                    </div>
-                    <Divider className={classNames(styles.divider)} />
-                    <div className={styles.fileGroup}>
-                        <div
-                            aria-label={this.props.intl.formatMessage(ariaMessages.tutorials)}
-                            className={
-                                classNames(styles.menuBarItem, styles.noOffset, styles.hoverable, 'tutorials-button')
-                            }
-                            onClick={this.props.onOpenTipLibrary}
-                        >
-                            <img
-                                className={styles.helpIcon}
-                                src={helpIcon}
-                            />
-                            <span className={styles.tutorialsLabel}>
-                                <FormattedMessage {...ariaMessages.tutorials} />
-                            </span>
-                        </div>
-                        <div
-                            aria-label={this.props.intl.formatMessage(ariaMessages.debug)}
-                            className={classNames(styles.menuBarItem, styles.noOffset, styles.hoverable)}
-                            onClick={this.props.onOpenDebugModal}
-                        >
-                            <img
-                                className={styles.helpIcon}
-                                src={debugIcon}
-                            />
-                            <span className={styles.debugLabel}>
-                                <FormattedMessage {...ariaMessages.debug} />
-                            </span>
                         </div>
                     </div>
                 </div>

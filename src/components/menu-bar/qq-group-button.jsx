@@ -5,9 +5,9 @@ import React from 'react';
 import ReactTooltip from 'react-tooltip';
 import Button from '../button/button.jsx';
 
-import wechatBizQrCode from './wechatbiz-qrcode.jpg';
+import qqGroupQrCode from './qq-group-qrcode.png';
 
-const WeChatButton = ({
+const QQGroupButton = ({
     className,
     onClick
 }) => (
@@ -15,25 +15,25 @@ const WeChatButton = ({
         <Button
             className={classNames(className)}
             onClick={onClick}
-            data-tip={`<img src='${wechatBizQrCode}' alt='WeChat QR Code' class='tooltip-image' />`}
+            data-tip={`<img src='${qqGroupQrCode}' alt='QQ Group QR Code' class='tooltip-image' />`}
         >
             <FormattedMessage
-                defaultMessage="微信公众号"
-                description="Label for WeChat biz QR code button"
-                id="gui.menuBar.wechatBiz"
+                defaultMessage="😻QQ群"
+                description="Label for QQ Group QR code button"
+                id="gui.menuBar.qqGroup"
             />
         </Button>
         <ReactTooltip html />
     </div>
 );
 
-WeChatButton.propTypes = {
+QQGroupButton.propTypes = {
     className: PropTypes.string,
     onClick: PropTypes.func.isRequired
 };
 
-WeChatButton.defaultProps = {
+QQGroupButton.defaultProps = {
     onClick: () => { }
 };
 
-export default WeChatButton;
+export default QQGroupButton;
